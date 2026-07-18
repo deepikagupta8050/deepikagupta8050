@@ -146,11 +146,11 @@ A deep learning pipeline built during my internship at SINP Kolkata to detect bi
 
 ## GitHub Analytics
 <div align="center">
-<img src="https://github-readme-stats.vercel.app/api?username=deepikagupta8050&show_icons=true&theme=default&hide_border=true&count_private=true&title_color=0EA5E9&icon_color=1E3A8A&text_color=333333" height="165"/>
+<img src="./profile/stats.svg" height="165"/>
 <img src="https://streak-stats.demolab.com/?user=deepikagupta8050&theme=default&hide_border=true&ring=0EA5E9&fire=1E3A8A&currStreakLabel=0EA5E9" height="165"/>
 </div>
 <div align="center">
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=deepikagupta8050&layout=compact&theme=default&hide_border=true&title_color=0EA5E9" width="55%"/>
+<img src="./profile/top-langs.svg" width="55%"/>
 </div>
 
 ## Certifications
