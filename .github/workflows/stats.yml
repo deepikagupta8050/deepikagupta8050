@@ -1,0 +1,38 @@
+name: Update Stats SVG
+
+on:
+  schedule:
+    - cron: '0 0 * * *'   # roz ek baar auto-update (midnight UTC)
+  workflow_dispatch:        # manually bhi "Run workflow" button se chala sakte ho
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate stats card
+        uses: soulteary/github-readme-stats-action@v1.0.0
+        with:
+          card: stats
+          options: 'username=deepikagupta8050&show_icons=true&theme=default&hide_border=true&count_private=true&title_color=0EA5E9&icon_color=1E3A8A&text_color=333333'
+          path: profile/stats.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate top-langs card
+        uses: soulteary/github-readme-stats-action@v1.0.0
+        with:
+          card: top-langs
+          options: 'username=deepikagupta8050&layout=compact&theme=default&hide_border=true&title_color=0EA5E9'
+          path: profile/top-langs.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add profile/*.svg
+          git commit -m "Update stats SVGs" || echo "No changes to commit"
+          git push
